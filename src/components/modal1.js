@@ -27,7 +27,7 @@ const ModalStack = ({navigation}) => {
           </View>
         </View>
       </Modal>
-      
+      <Text>HI</Text>
     </View>
   );
 };
