@@ -2,7 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { View,Text } from 'react-native';
-import Home from '../screens/Home/';
+import Library from '../screens/Library/index';
 import stack from './libraryStack';
 const Stack = createStackNavigator();
 
@@ -11,7 +11,7 @@ const Stack = createStackNavigator();
 const HomeStack =({navigation}) => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeStack} options={{headerTitleAlign:"left", headerLeft: () => (
+      <Stack.Screen name="Home" component={Library} options={{headerTitleAlign:"left", headerLeft: () => (
            <View style={{justifyContent:"space-between",flexDirection:"row"}}>
              <AntDesign name="menu-unfold" size={25} color="#4a4f51" style={{left:4,}} onPress={()=>navigation.openDrawer()} />
              <AntDesign name="search1" size={25} color="#4a4f51" style={{left:230,}}onPress={() => navigation.openDrawer()}/>

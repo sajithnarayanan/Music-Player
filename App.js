@@ -9,6 +9,9 @@ import HomeStack from './src/screens/Home/index';
 import ModalStack from './src/components/modal1';
 import stack from './src/navigation/libraryStack';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import HomeScreen from './src/navigation/homeStacks';
+import Play from './src/screens/Play';
+import Setting from './src/components/setting';
 const Drawer = createDrawerNavigator();
 
 // const HomeStackScreen = ({navigation})=>(
@@ -25,7 +28,7 @@ const App = ({navigation}) => {
     return (
       <NavigationContainer>
           <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={MainNav} options={{
+        <Drawer.Screen name="Home" component={HomeScreen} options={{
             title:"Home",headerLeft: () => (
                 <AntDesign name="search1" size={40} width={60} height={60} color="black" backgroundColor="red" onPress={() => navigation.navigate('stack')}></AntDesign>
             )
@@ -39,7 +42,7 @@ const App = ({navigation}) => {
         <Drawer.Screen name="Shuffle" component={Home} options={{headerLeft: () => (
                 <Icon.Button name="menu-fold" size={40} width={60} height={60} color="black" backgroundColor="#fff" onPress={() => navigation.openDrawer()}></Icon.Button>
             )}} />
-        <Drawer.Screen name="Theme" component={stack} options={{headerLeft: () => (
+        <Drawer.Screen name="Theme" component={Play} options={{headerLeft: () => (
                 <Icon.Button name="search2" size={40} width={60} height={60} color="black" backgroundColor="#fff" onPress={() => navigation.openDrawer()}></Icon.Button>
             )}} />
         <Drawer.Screen name="Widget" component={Home} options={{headerLeft: () => (
@@ -54,7 +57,7 @@ const App = ({navigation}) => {
  <Drawer.Screen name="Hidden feautres" component={Home} options={{headerLeft: () => (
                 <Icon.Button name="youtube" size={40} width={60} height={60} color="black" backgroundColor="#fff" onPress={() => navigation.openDrawer()}></Icon.Button>
             )}}/>
- <Drawer.Screen name="Settings" component={Home} options={{headerLeft: () => (
+ <Drawer.Screen name="Settings" component={Setting} options={{headerLeft: () => (
                 <Icon.Button name="gear" size={40} width={60} height={60} style={{left:10}}color="black" backgroundColor="red" onPress={() => navigation.openDrawer()}></Icon.Button>
             )}}/>
 
